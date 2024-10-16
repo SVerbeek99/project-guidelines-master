@@ -5,7 +5,7 @@
 | [Português](./README-pt-BR.md)
 | [Italiana](./README-it.md)
 
-[<img src="./images/elsewhen-logo.png" width="180" height="180">](https://www.elsewhen.com/)
+[<img src="../images/elsewhen-logo.png" width="180" height="180">](https://www.elsewhen.com/)
 
 # Project Guidelines &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -41,7 +41,7 @@
 
 ## 1. Git
 
-![Git](/images/branching.png)
+![Git](./images/branching.png)
 <a name="some-git-rules"></a>
 
 ### 1.1 Some Git rules
@@ -204,7 +204,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 2. Documentation
 
-![Documentation](/images/documentation.png)
+![Documentation](./images/documentation.png)
 
 - Use this [template](./README.sample.md) for `README.md`, Feel free to add uncovered sections.
 - For projects with more than one repository, provide links to them in their respective `README.md` files.
@@ -219,7 +219,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 3. Environments
 
-![Environments](/images/laptop.png)
+![Environments](./images/laptop.png)
 
 - Define separate `development`, `test` and `production` environments if needed.
 
@@ -302,7 +302,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 4. Dependencies
 
-![Github](/images/modules.png)
+![Github](./images/modules.png)
 
 - Keep track of your currently available packages: e.g., `npm ls --depth=0`. [read more...](https://docs.npmjs.com/cli/ls)
 - See if any of your packages have become unused or irrelevant: `depcheck`. [read more...](https://www.npmjs.com/package/depcheck)
@@ -336,7 +336,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 5. Testing
 
-![Testing](/images/testing.png)
+![Testing](./images/testing.png)
 
 - Have a `test` mode environment if needed.
 
@@ -386,7 +386,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 6. Structure and Naming
 
-![Structure and Naming](/images/folder-tree.png)
+![Structure and Naming](./images/folder-tree.png)
 
 - Organize your files around product features / pages / components, not roles. Also, place your test files next to their implementation.
 
@@ -449,7 +449,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 7. Code style
 
-![Code style](/images/code-style.png)
+![Code style](./images/code-style.png)
 
 <a name="code-style-check"></a>
 
@@ -551,7 +551,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 8. Logging
 
-![Logging](/images/logging.png)
+![Logging](./images/logging.png)
 
 - Avoid client-side console logs in production
 
@@ -571,7 +571,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 <a name="api-design"></a>
 
-![API](/images/api.png)
+![API](./images/api.png)
 
 ### 9.1 API design
 
@@ -859,7 +859,7 @@ For each endpoint explain:
 
 ## 10. Accessibility ([a11y](https://www.a11yproject.com/))
 
-![Accessibility](/images/accessibility.png)
+![Accessibility](./images/accessibility.png)
 
 ### 10.1 Laying accessibility practices in place
 
@@ -935,7 +935,7 @@ More accessibility rules can be found [here](https://dequeuniversity.com/rules/a
 
 ## 11. Licensing
 
-![Licensing](/images/licensing.png)
+![Licensing](./images/licensing.png)
 
 Make sure you use resources that you have the rights to use. If you use libraries, remember to look for MIT, Apache or BSD but if you modify them, then take a look at the license details. Copyrighted images and videos may cause legal problems.
 
