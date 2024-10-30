@@ -1,28 +1,39 @@
-<img src="./images/Flag_of_California.svg.png" alt="Logo of the project" align="right" width="100" height="100"> 
+<img src="./images/Flag_of_California.svg.png" alt="Logo of the project" align="right" width="150" height="100"> 
 
-# Name of the project &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
-> Additional information or tag line
+# Design and Implementation of MLOps for an ML Application: California Housing Prices &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+> This project provides an API for predicting California housing prices based on various features of the dataset included. The repository includes a Jupyter notebook for initial analysis and model training, cloud build configurations, and a Dockerized API for making predictions.
 
-A brief description of your project, what it is used for.
+---
 
+## Features
+- **Machine Learning Model**: Utilizes the California housing dataset to train a predictive model.
+- **Dockerized API**: The `prediction-api` directory contains code to deploy the model as an API.
+- **Cloud Build Configurations**: JSON files for setting up automated builds.
+
+---
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/California_Housing_Predictor.git
+   cd California_Housing_Predictor
 
-```shell
-commands here
-```
-
-Here you should say what actually happens when you execute the code above.
+   
+Acces the API at http://localhost:5000.
 
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+- **Python 3.8+**: Core language used for data analysis, model building, and API creation.
+- **Flask**: Used to create the API in `app.py`.
+- **Docker**: Containerizes the API for easy deployment.
+- **Google Cloud Build**: Configurations included for automated deployment in the cloud.
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+- **Python 3.8 or higher**
+- **Docker** (for building and deploying the API)
+- **Jupyter Notebook** (optional, for local development and testing of the notebook)
+- **Google Cloud Account** (for cloud deployment if using Cloud Build)
 
 
 ### Setting up Dev
@@ -30,71 +41,161 @@ What is needed to set up the dev environment. For instance, global dependencies 
 Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
-```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
+1. **Clone the repository**
+  ```bash
+  git clone https://github.com/yourusername/California_Housing_Predictor.git
+  cd California_Housing_Predictor
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+2. **Setup virtual environment**
+   ```bash
+   python3 -m venv env
+   source env/bin/activate
+
+3. **Install dependencies**
+   ```bash
+   pip install -r prediction-api/requirements.txt
+
+4. **Run API locally**
+   ```bash
+   docker build -t california_housing_predictor .
+   docker run -p 5000:5000 california_housing_predictor
+
+First step is for cloning the repository. The second step sets up a virtual environment for Python where the program can run in. The third step consists of installing the required libraries/dependencies to run the API.  These are:
+
+- **setuptools**
+- **flask**
+- **pandas**
+- **keras**
+- **tensorflow**
+- **numpy**
+- **h5py**
+- **six**
+- **joblib**
+- **scikit-learn**
+- **google-cloud-storage**
+
+
+
+The final step runs the API in the virtual environment.
+
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
 ```shell
-./configure
-make
-make install
+docker build -t california_housing_predictor ./prediction-api
 ```
 
-Here again you should state what actually happens when the code above gets
-executed.
+The code above builds the Docker image to package the API:
 
 ### Deploying / Publishing
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
 
 ```shell
-packagemanager deploy your-project -s server.com -u username -p password
+docker run -p 5000:5000 california_housing_predictor
 ```
 
-And again you'd need to tell what the previous code actually does.
+Access the API at http://localhost:5000.
+
+**Google Cloud Deployment** (optional):
+Configure and deploy with Cloud Build:
+The JSON configurations (cloud_build_app_mlp_automated.json, etc.) contain the steps for Google Cloud.
+Ensure your Google Cloud project is set up and has necessary permissions.
+
+```shell
+gcloud builds submit --config cloud_build_ml_app.json
+```
 
 ## Versioning
 
-We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
+This project uses Semantic Versioning. Versions are tagged as vMAJOR.MINOR.PATCH, reflecting new features, changes, and fixes respectively.
 
 
 ## Configuration
 
-Here you should write what are all of the configurations a user can enter when using the project.
+Configurations for deployment are stored in the cloud_build_app_mlp_automated.json and other cloud build JSON files. API settings can be modified in app.py.
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+Tests can be added to validate the model and API. To run tests, add test cases within tests/ (if this directory does not exist, create it) and use pytest:
+
+Install testing dependencies (add pytest to requirements.txt):
 
 ```shell
-Give an example
+pip install pytest
+```
+
+```shell
+pytest tests/
 ```
 
 ## Style guide
 
-Explain your code style and show how to check it.
+This project follows PEP 8 style guidelines for Python code. Ensure code is formatted using a linter, such as flake8:
 
-## Api Reference
+```shell
+pip install flake8
+```
 
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
+```shell
+flake8 prediction-api/
+```
 
+The code above installs flake8 and runs it.
+
+## API Reference
+
+Endpoint: /predict
+Method: POST
+Description: Predicts housing prices based on provided feature values.
+Payload:
+
+```shell
+{
+    "feature1": value1,
+    "feature2": value2,
+    ...
+}
+```
+Response:
+Returns a JSON object with predicted price:
+
+```shell
+{
+    "prediction": 123456
+}
+
+```
+Usage example:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"feature1": value1, "feature2": value2}' http://localhost:5000/predict
+```
 
 ## Database
 
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
+The dataset is a modified version of the California Housing Data used in the paper Pace, R. Kelley, and Ronald Barry. "Sparse spatial autoregressions." Statistics & Probability Letters 33.3 (1997): 291-297..
+
+The data contains information from the 1990 California census. So although it may not help you with predicting current housing prices like the Zillow Zestimate dataset, it does provide an accessible introductory dataset for teaching people about the basics of machine learning.
+
+The data pertains to the houses found in a given California district and some summary stats about them based on the 1990 census data. The columns are as follows, their names are pretty self-explanatory:
+
+- 1) Median House Value: Median house value for households within a block (measured in US Dollars) [$]
+- 2) Median Income: Median income for households within a block of houses (measured in tens of thousands of US Dollars) [10k$]
+- 3) Median Age: Median age of a house within a block; a lower number is a newer building [years]
+- 4) Total Rooms: Total number of rooms within a block
+- 5) Total Bedrooms: Total number of bedrooms within a block
+- 6) Population: Total number of people residing within a block
+- 7) Households: Total number of households, a group of people residing within a home unit, for a block
+- 8) Latitude: A measure of how far north a house is; a higher value is farther north [°]
+- 9) Longitude: A measure of how far west a house is; a higher value is farther west [°]
+- 10) Distance to coast: Distance to the nearest coast point [m]
+- 11) Distance to Los Angeles: Distance to the centre of Los Angeles [m]
+- 12) Distance to San Diego: Distance to the centre of San Diego [m]
+- 13) Distance to San Jose: Distance to the centre of San Jose [m]
+- 14) Distance to San Francisco: Distance to the centre of San Francisco [m]
+
+Source: https://www.kaggle.com/datasets/fedesoriano/california-housing-prices-data-extra-features.
 
 ## Licensing
 
-State what the license is and how to find the text version of the license.
+This project is licensed under the MIT License.
